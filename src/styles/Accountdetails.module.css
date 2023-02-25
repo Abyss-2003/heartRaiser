@@ -35,7 +35,7 @@
 .btna{
     font-size: 1em;
     background-color: rgba(254, 2, 65, 0.3);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(5px);
     border-radius: 10px;
     border: 1px solid white;
     color: aliceblue;

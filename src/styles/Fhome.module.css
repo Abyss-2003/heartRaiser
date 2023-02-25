@@ -2,7 +2,7 @@
 .pehla{
     border: 2.5px solid rgb(41, 0, 45);
     background-color: rgba(254, 2, 65, 0.3);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(5px);
     box-shadow: 10px 10px 7px rgba(40, 39, 39, 0.4);
     grid-row: 1;
     grid-column: 1/2;
@@ -12,7 +12,7 @@
 .doosra{
   border: 2.5px solid rgb(41, 0, 45);
   background-color: rgba(254, 2, 65, 0.3);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(5px);
   box-shadow: 10px 10px 7px rgba(40, 39, 39, 0.4);
   grid-row: 1;
   grid-column: 2/3;
@@ -21,7 +21,7 @@
 .tisra{
   border: 2.5px solid rgb(41, 0, 45);
   background-color: rgba(254, 2, 65, 0.3);
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(5px);
   box-shadow: 10px 10px 7px rgba(40, 39, 39, 0.4);
   grid-row: 1;
   grid-column: 3/4;
@@ -36,7 +36,7 @@
 
 .newc {
   background-color: #e8e0ca58;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(5px);
 }
 
 .dfircaro {
@@ -68,7 +68,7 @@
   margin-left: -13vw;
   height: 30vw;
   width: 120vw;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(5px);
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-gap: 2rem;
@@ -176,7 +176,7 @@
 
   /* NGO section */
   .cardtitle{
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     color: rgb(67, 0, 0);
   }
   .cardtext{
@@ -192,7 +192,7 @@
     margin-top: 2rem;
     border-radius: 1.5rem;
     background-color: rgba(255, 227, 134, 0.3);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(5px);
     box-shadow: 10px 10px 7px rgba(40, 39, 39, 0.4);
     width: 16rem;
     height: 335px;
@@ -202,9 +202,16 @@
   .card:hover{
     transform: scale(1.2);
   }
+  .ngoa{
+    font-size: 2.2rem;
+    line-height: 2.5vh;
+    text-align: center;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+  }
   .card img{
-    height: 170px;
-    width: 170px;
+    height: 150px;
+    width: 150px;
     border-radius: 50%;
   }
   .subham{
@@ -231,7 +238,7 @@
   .whyUss{
     border: 1px solid black;
     background-color: rgba(255, 169, 169, 0.42);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(5px);
     box-shadow: 15px 15px 7px rgba(40, 39, 39, 0.4);
     display: flex;
     align-items: center;
@@ -240,7 +247,7 @@
   .whyUs{
     border: 1px solid black;
     background-color: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(5px);
     box-shadow: 15px 15px 7px rgba(40, 39, 39, 0.4);
     display: flex;
     align-items: center;
@@ -252,6 +259,8 @@
   }
   .why{
     margin-left: 2rem;
+    font-size: 1.2rem;
+    font-weight: 500;
   }
   .h{
     text-align: center;

@@ -13,8 +13,10 @@ import {BsFillCreditCardFill} from 'react-icons/bs'
 import {MdAddIcCall} from 'react-icons/md'
 import {GiBullseye} from 'react-icons/gi'
 import {FaBuilding} from 'react-icons/fa'
+import axios from 'axios'
 
-export default function Home() {
+export default function Home({cards,allUserDetails}) {
+  console.log(allUserDetails)
   return (
     <>
       <Head>
@@ -35,21 +37,21 @@ export default function Home() {
                   <Carousel.Item className={`${styles.dfircaro}`} interval={1000}>
                     <img
                       className={`${styles.fircaro} d-block w-100`}
-                      src="/1797971.jpg"
+                      src={cards[0].img}
                       alt="First slide"
                     />
                   </Carousel.Item>
                   <Carousel.Item className={`${styles.dfircaro}`} interval={1000}>
                     <img
                       className={`${styles.fircaro} d-block w-100`}
-                      src="/5640557.jpg"
+                      src={cards[1].img}
                       alt="Second slide"
                     />
                   </Carousel.Item>
                   <Carousel.Item className={`${styles.dfircaro}`} interval={1000}>
                     <img
                       className={`${styles.fircaro} d-block w-100`}
-                      src="/5591010.jpg"
+                      src={cards[2].img}
                       alt="Third slide"
                     />
                   </Carousel.Item>
@@ -60,36 +62,34 @@ export default function Home() {
                 <Carousel.Item className={`${styles.dcaro}`} interval={1000}>
                   <img
                     className={`${styles.caro} d-block w-100`}
-                    src="/1797971.jpg"
+                    src={cards[0].img}
                     alt="First slide"
                   />
                   <Carousel.Caption className={`${styles.newc}`}>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <h3>{cards[0].title}</h3>
+                    <p>{cards[0].description}</p>
                   </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item className={`${styles.dcaro}`} interval={1000}>
                   <img
                     className={`${styles.caro} d-block w-100`}
-                    src="/5640557.jpg"
+                    src={cards[1].img}
                     alt="Second slide"
                   />
                   <Carousel.Caption className={`${styles.newc}`}>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h3>{cards[1].title}</h3>
+                    <p>{cards[1].description}</p>
                   </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item className={`${styles.dcaro}`} interval={1000}>
                   <img
                     className={`${styles.caro} d-block w-100`}
-                    src="/5591010.jpg"
+                    src={cards[2].img}
                     alt="Third slide"
                   />
                   <Carousel.Caption className={`${styles.newc}`}>
-                    <h3>Third slide label</h3>
-                    <p>
-                      Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                    </p>
+                    <h3>{cards[2].title}</h3>
+                    <p>{cards[2].description}</p>
                   </Carousel.Caption>
                 </Carousel.Item>
               </Carousel>
@@ -100,21 +100,21 @@ export default function Home() {
                   <Carousel.Item className={`${styles.dseccaro}`} interval={1000}>
                     <img
                       className={`${styles.seccaro} d-block w-100`}
-                      src="/1797971.jpg"
+                      src={cards[0].img}
                       alt="First slide"
                     />
                   </Carousel.Item>
                   <Carousel.Item className={`${styles.dseccaro}`} interval={1000}>
                     <img
                       className={`${styles.seccaro} d-block w-100`}
-                      src="/5640557.jpg"
+                      src={cards[1].img}
                       alt="Second slide"
                     />
                   </Carousel.Item>
                   <Carousel.Item className={`${styles.dseccaro}`} interval={1000}>
                     <img
                       className={`${styles.seccaro} d-block w-100`}
-                      src="/5591010.jpg"
+                      src={cards[2].img}
                       alt="Third slide"
                     />
                   </Carousel.Item>
@@ -141,7 +141,7 @@ export default function Home() {
               <div className={`${styles.abhi}`}>
                 <div className={`${styles.img1}`}></div>
                 <div className={`${styles.about}`}>
-                  <h3>Abhijeet Sahu</h3>
+                  <h3 className='fw-bold'>Abhijeet Sahu</h3>
                   <p className={`${styles.work}`}>Front-end Developer (CSE 2nd Year, OUTR-25)</p>
                   <p>"Fundraising is the gentle art of teaching the joy of giving."</p>
                 </div>
@@ -150,7 +150,7 @@ export default function Home() {
             <div className={`${styles.dev0}`}>
               <div className={`${styles.dev}`}>
                 <div className={`${styles.aboutt}`}>
-                  <h3>Dev Ashrit Behera</h3>
+                  <h3 className='fw-bold'>Dev Ashrit Behera</h3>
                   <p className={`${styles.work}`}>Full Stack Developer (CSE 2nd Year, OUTR-25)</p>
                   <p>"Alone we can do so little, together we can do so much."</p>
                 </div>
@@ -162,7 +162,7 @@ export default function Home() {
                 <div className={`${styles.img3}`}></div>
 
                 <div className={`${styles.about}`}>
-                  <h3>Paras Singh Bhatia</h3>
+                  <h3 className='fw-bold'>Paras Singh Bhatia</h3>
                   <p className={`${styles.work}`}>Back-end Developer (CSE 2nd Year, OUTR-25)</p>
                   <p>"Buckle up if you want to bring change to the world."</p>
                 </div>
@@ -171,7 +171,7 @@ export default function Home() {
             <div className={`${styles.om0}`}>
               <div className={`${styles.om}`}>
                 <div className={`${styles.aboutt}`}>
-                  <h3>Subham Parida</h3>
+                  <h3 className='fw-bold'>Subham Parida</h3>
                   <p className={`${styles.work}`}>Frontend Developer, Designer (CSE 2nd Year, OUTR-25)</p>
                   <p>"Not all of us can do great things, but we can do small things with great love."</p>
                 </div>
@@ -181,67 +181,36 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="NGO">
+        <section className="NGO"><br /><br />
+          <h2 className={`${styles.ngoa}`}>NGO's Accociated With Us</h2>
           <Carousel indicators={false} variant="dark" className={`carousel-inner ${styles.subham}`}>
             <Carousel.Item interval={3000}>
               <div className={`row ${styles.rowOfNgo}`}>
                 <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <img src="/ngo1.webp" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
-                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <h5 className={`${styles.cardtitle} card-title`}>CRY (Child Rights and You)</h5>
                     <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </div>
                 <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <img src="/ngo2.webp" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
-                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <h5 className={`${styles.cardtitle} card-title`}>Smile Foundation</h5>
                     <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </div>
                 <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <img src="/ngo3.webp" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
-                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <h5 className={`${styles.cardtitle} card-title`}>Goonj</h5>
                     <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </div>
                 <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <img src="/ngo4.webp" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
-                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
-                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              </div>
-            </Carousel.Item>
-            <Carousel.Item interval={3000}>
-              <div className={`row ${styles.rowOfNgo}`}>
-                <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
-                  <div className="card-body mt-4">
-                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
-                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-                <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
-                  <div className="card-body mt-4">
-                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
-                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-                <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
-                  <div className="card-body mt-4">
-                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
-                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-                <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
-                  <div className="card-body mt-4">
-                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <h5 className={`${styles.cardtitle} card-title`}>Care India</h5>
                     <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </div>
@@ -250,30 +219,62 @@ export default function Home() {
             <Carousel.Item interval={3000}>
               <div className={`row ${styles.rowOfNgo}`}>
                 <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <img src="./ngo5.webp" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
-                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <h5 className={`${styles.cardtitle} card-title`}>Helpage India</h5>
                     <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </div>
                 <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <img src="./ngo6.webp" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
-                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <h5 className={`${styles.cardtitle} card-title`}>Save the Children India</h5>
                     <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </div>
                 <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <img src="./ngo7.webp" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
-                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <h5 className={`${styles.cardtitle} card-title`}>Oxfam India</h5>
                     <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </div>
                 <div className={`${styles.card} col-lg-4`}>
-                  <img src="./1797971.jpg" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <img src="./ngo8.png" className="mx-auto mt-4 card-img-top" alt="..." />
                   <div className="card-body mt-4">
-                    <h5 className={`${styles.cardtitle} card-title`}>Card title</h5>
+                    <h5 className={`${styles.cardtitle} card-title`}>WWF</h5>
+                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+              </div>
+            </Carousel.Item>
+            <Carousel.Item interval={3000}>
+              <div className={`row ${styles.rowOfNgo}`}>
+                <div className={`${styles.card} col-lg-4`}>
+                  <img src="./go9.png" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <div className="card-body mt-4">
+                    <h5 className={`${styles.cardtitle} card-title`}>Free The Slave</h5>
+                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+                <div className={`${styles.card} col-lg-4`}>
+                  <img src="./ngo10.png" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <div className="card-body mt-4">
+                    <h5 className={`${styles.cardtitle} card-title`}>One Drop</h5>
+                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+                <div className={`${styles.card} col-lg-4`}>
+                  <img src="./ngo11.png" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <div className="card-body mt-4">
+                    <h5 className={`${styles.cardtitle} card-title`}>Human Appeal</h5>
+                    <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+                <div className={`${styles.card} col-lg-4`}>
+                  <img src="./ngo12.png" className="mx-auto mt-4 card-img-top" alt="..." />
+                  <div className="card-body mt-4">
+                    <h5 className={`${styles.cardtitle} card-title`}>Doctors Of The World</h5>
                     <p className={`${styles.cardtext} card-text`}>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                   </div>
                 </div>
@@ -283,7 +284,7 @@ export default function Home() {
         </section>
 
         <section className="WHY">
-          <div className={`${styles.h}`}><h1><span>Why </span><span className={`${styles.usss}`}>Us</span></h1></div>
+          <div className={`${styles.h}`}><h1><span>Why </span><span className={`${styles.usss}`}>Us ?</span></h1></div>
           <br /><br />
           <div className={`row ${styles.one} space`}>
             <div className={`${styles.whyUs} col-lg-4 col-md-4`}>
@@ -333,4 +334,19 @@ export default function Home() {
       </main>
     </>
   )
+}
+
+export async function getServerSideProps(context) {
+  const response = await fetch("http://localhost:5000/hackathon/card");
+  const data = await response.json();
+  const allCards = data.info;
+  const response2  = await fetch("http://localhost:5000/hackathon/getallusers");
+  const data2 = await response2.json();
+  const alluserdetails = data2.uzzer;
+  const filteralluserdetails = alluserdetails.filter((item)=> {
+      return item.NGOname
+  });
+  return {
+      props: { cards: allCards, allUserDetails : filteralluserdetails }, 
+  }
 }
