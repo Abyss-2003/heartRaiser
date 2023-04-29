@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "cd backend && nodemon app.js",
+    "start": "cd Backend && nodemon app.js",
     "lint": "next lint"
   },
   "dependencies": {
